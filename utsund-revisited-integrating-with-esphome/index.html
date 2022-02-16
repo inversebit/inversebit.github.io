@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Integrating with ESPHome and Home assistant - Utsund revisited</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        :root {
+            --button-bg-color: #ffffff;
+            --button-text-color: var(--color-darkgrey);
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css?v=9c4eb4f91f" />
+
+    <meta name="description" content="Could my smart Utsund string light get better?" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://inversebit.org/utsund-revisited-integrating-with-esphome/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://inversebit.org/utsund-revisited-integrating-with-esphome/amp/" />
+    
+    <meta property="og:site_name" content="Inversebit" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Integrating with ESPHome and Home assistant - Utsund revisited" />
+    <meta property="og:description" content="Could my smart Utsund string light get better?" />
+    <meta property="og:url" content="https://inversebit.org/utsund-revisited-integrating-with-esphome/" />
+    <meta property="article:published_time" content="2022-01-01T00:01:00.000Z" />
+    <meta property="article:modified_time" content="2022-02-16T21:04:20.000Z" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Integrating with ESPHome and Home assistant - Utsund revisited" />
+    <meta name="twitter:description" content="Could my smart Utsund string light get better?" />
+    <meta name="twitter:url" content="https://inversebit.org/utsund-revisited-integrating-with-esphome/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Inversebit" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Inversebit",
+        "url": "https://inversebit.org/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://inversebit.org/favicon.png",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Inversebit",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/07ae5d8bdbd343cdf659320e00b606c4?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://inversebit.org/author/inversebit/",
+        "sameAs": []
+    },
+    "headline": "Integrating with ESPHome and Home assistant - Utsund revisited",
+    "url": "https://inversebit.org/utsund-revisited-integrating-with-esphome/",
+    "datePublished": "2022-01-01T00:01:00.000Z",
+    "dateModified": "2022-02-16T21:04:20.000Z",
+    "description": "Could my smart Utsund string light get better?",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://inversebit.org/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 4.32" />
+    <link rel="alternate" type="application/rss+xml" title="Inversebit" href="https://inversebit.org/rss/" />
+    
+    <script defer src="/public/cards.min.js?v=9c4eb4f91f"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=9c4eb4f91f">
+    <style>
+    a.gh-head-button {
+        display: none;
+    }
+    .footer-cta {
+        display: none;
+    }
+    .gh-burger {
+        /*display: none;*/
+    }
+    .site-footer{
+        padding-bottom: 2em;
+    }
+    img.kg-image{
+        border-radius: 5px;
+    }
+    div.site-description{
+        margin-top: 2em;
+    }
+    div.site-description a{
+        color: var(--ghost-accent-color);
+		text-decoration: underline;
+    }
+    hr.description-separator{
+        margin: 2.5em 0 2.0em;
+    }
+</style><style>:root {--ghost-accent-color: #ff7800;}</style>
+
+</head>
+<body class="post-template">
+<div class="viewport">
+
+    <header id="gh-head" class="gh-head">
+        <nav class="gh-head-inner inner gh-container">
+
+            <div class="gh-head-brand">
+                <a class="gh-head-logo" href="https://inversebit.org">
+                        Inversebit
+                </a>
+                <a class="gh-burger" role="button">
+                    <div class="gh-burger-box">
+                        <div class="gh-burger-inner"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="gh-head-menu">
+                
+            </div>
+            <div class="gh-head-actions">
+                <div class="gh-social">
+                </div>
+
+                    <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="site-content">
+        
+
+
+
+<main id="site-main" class="site-main">
+    <article class="article post no-image ">
+
+        <header class="article-header gh-canvas">
+
+
+            <h1 class="article-title">Integrating with ESPHome and Home assistant - Utsund revisited</h1>
+
+            <p class="article-excerpt">Could my smart Utsund string light get better?</p>
+
+            <div class="article-byline">
+                <section class="article-byline-content">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <a href="/author/inversebit/" class="author-avatar">
+                                <img class="author-profile-image" src="//www.gravatar.com/avatar/07ae5d8bdbd343cdf659320e00b606c4?s&#x3D;250&amp;d&#x3D;mm&amp;r&#x3D;x" alt="Inversebit" />
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="article-byline-meta">
+                        <h4 class="author-name"><a href="/author/inversebit/">Inversebit</a></h4>
+                        <div class="byline-meta-content">
+                            <time class="byline-meta-date" datetime="2022-01-01">Jan 1, 2022</time>
+                            <span class="byline-reading-time"><span class="bull">&bull;</span> 2 min read</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </header>
+
+        <section class="gh-content gh-canvas">
+            <p>If you've read some of my older posts you'll know I <a href="https://inversebit.org/utsund-hack/">hacked an IKEA string light</a> in order to control it remotely with my smartphone (or any other device with a web browser). In the past few years home automation has bloomed rapidly and every appliance is now <em>smart</em>. And at the same time ope source alternatives to closed appliance control systems have appeared under my radar. One of the most well-known systems is <a href="https://www.home-assistant.io/">Home Assistant</a> also known as hassio.</p><h2 id="home-assistant">Home Assistant</h2><p>Home assistant is an smart appliance control system you can get in different forms, as a service you install on a linux box, docker container or a Raspberry Pi distribution. I got it this last way, just simply burn a microSD card following the <a href="https://www.home-assistant.io/installation/raspberrypi/">well-written instructions</a> and pop it in a spare Raspberry Pi.</p><p>After the system boots you can set up and use hassio through a web interface, the UI is generally pretty intuituive and easy to use. Hassio automatically detects some of the <em>smart devices</em> available on the network and offers to integrate them, letting you take control of your aplliances in a centralised way.</p><h2 id="esphome">ESPHome</h2><p>My utsund hack was a homebre solution, there was no way I could connect it to Hassio without reading its documentation, developing a firmware for the NodeMCU that controls it and setting everything up. Luckily for me a bunch of other people went this way before and created the <a href="https://esphome.io/">ESPHome</a> project.</p><p>ESPHome is a framework that let's you configure an ESP-based device (like the NodeMCU) through YAML files and generates a firmware image based on that configuration. The process is totally automated, the ESPHome CLI tool, downloads its toolchain and dependencies, converts the YAML code to whatever intermediate language it uses and finally compiles a firmware that it burns on the NodeMCU. It even offers you to do over-the-air updates!</p><p>The documentation is pretty extensive, but the organization lacking. Finding a way to reproduce what I already had donde for the Utsund string light was a bit cumbersome, but once I found the right documentation pages setting the YAML file up was a breeze.</p><pre><code>esphome:
+  name: ikealights
+  platform: ESP8266
+  board: nodemcuv2
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: "super-secret-password"
+
+ota:
+  password: "even-more-secret-password"
+
+wifi:
+  ssid: "An IoT network"
+  password: "thenetworkspassword"
+
+  manual_ip:
+    static_ip: 192.168.50.100
+    gateway: 192.168.50.1
+    subnet: 255.255.255.0
+
+switch:
+  - platform: gpio
+    pin: D2
+    name: "Ikea lights"
+</code></pre><p>I had to define the pin where I had connected the MOSFET which controls the power flow and set up the networking. And that's it! When the NodeMCU connected to my WiFi network hassio offered to add it to its system. From there on I had a switch on the hassio interface to turn on or off the lights from my PC or smartphone!</p><figure class="kg-card kg-image-card"><img src="https://inversebit.org/content/images/2022/01/onoff_utsund.gif" class="kg-image" alt loading="lazy" width="180" height="320"></figure><h2 id="automation-with-hassio">Automation with hassio</h2><p>Having integrated the utsund light string with hassio I couldn't leave it at that, hassio offers incredible functionality to make your life simpler. One of those features is automation. Automation routines let you link actions to triggers.</p><p>In my case I created an automation to turn on the light string when the sun sets, and turns them off at certain fixed time at night. I also tried out an automation to turn the strip on or off by reading an NFC tag, pretty useful if you want to avoid opening the app and pressing the button yourself.</p>
+        </section>
+
+
+    </article>
+</main>
+
+
+
+<aside class="read-more-wrap">
+    <div class="read-more inner">
+
+
+                    
+<article class="post-card post no-image ">
+
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/smartifying-a-dumb-vibrator/">
+            <header class="post-card-header">
+                <h2 class="post-card-title">Smartifying a dumb vibrator</h2>
+            </header>
+            <div class="post-card-excerpt">
+                <p>If a device doesn't meet your needs improve it!</p>
+            </div>
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+                    <a href="/author/inversebit/" class="static-avatar">
+                        <img class="author-profile-image" src="//www.gravatar.com/avatar/07ae5d8bdbd343cdf659320e00b606c4?s&#x3D;250&amp;d&#x3D;mm&amp;r&#x3D;x" alt="Inversebit" loading="lazy" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="/author/inversebit/">Inversebit</a></span>
+                <span class="post-card-byline-date"><time datetime="2022-01-01">Jan 1, 2022</time> <span class="bull">&bull;</span> 6 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+                    
+<article class="post-card post no-image ">
+
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/my-katana-60-mechanical-keyboard/">
+            <header class="post-card-header">
+                <h2 class="post-card-title">My Katana 60 mechanical keyboard</h2>
+            </header>
+            <div class="post-card-excerpt">
+                <p>An account of my own keeb build</p>
+            </div>
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+                    <a href="/author/inversebit/" class="static-avatar">
+                        <img class="author-profile-image" src="//www.gravatar.com/avatar/07ae5d8bdbd343cdf659320e00b606c4?s&#x3D;250&amp;d&#x3D;mm&amp;r&#x3D;x" alt="Inversebit" loading="lazy" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="/author/inversebit/">Inversebit</a></span>
+                <span class="post-card-byline-date"><time datetime="2021-01-01">Jan 1, 2021</time> <span class="bull">&bull;</span> 6 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+                    
+<article class="post-card post no-image ">
+
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/cyperspikes/">
+            <header class="post-card-header">
+                <h2 class="post-card-title">Cyperspikes</h2>
+            </header>
+            <div class="post-card-excerpt">
+                <p>My own take on Adafruit's Cyberpunk spikes</p>
+            </div>
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+                    <a href="/author/inversebit/" class="static-avatar">
+                        <img class="author-profile-image" src="//www.gravatar.com/avatar/07ae5d8bdbd343cdf659320e00b606c4?s&#x3D;250&amp;d&#x3D;mm&amp;r&#x3D;x" alt="Inversebit" loading="lazy" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="/author/inversebit/">Inversebit</a></span>
+                <span class="post-card-byline-date"><time datetime="2020-08-01">Aug 1, 2020</time> <span class="bull">&bull;</span> 3 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+    </div>
+</aside>
+
+
+    </div>
+
+    <footer class="site-footer outer">
+        <div class="inner">
+            <section class="copyright"><a href="https://inversebit.org">Inversebit</a> &copy; 2022</section>
+            <nav class="site-footer-nav">
+                
+            </nav>
+            <div><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
+        </div>
+    </footer>
+
+</div>
+
+
+<script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous">
+</script>
+<script src="/assets/built/casper.js?v=9c4eb4f91f"></script>
+<script>
+$(document).ready(function () {
+    // Mobile Menu Trigger
+    $('.gh-burger').click(function () {
+        $('body').toggleClass('gh-head-open');
+    });
+    // FitVids - Makes video embeds responsive
+    $(".gh-content").fitVids();
+});
+</script>
+
+
+
+</body>
+</html>
